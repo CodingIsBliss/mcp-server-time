@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-server-time"
+version = "0.1.0"
+description = "A timezone-aware time MCP server with streamable-http transport"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "mcp[cli]>=1.9.0",
+]
+
+[project.scripts]
+mcp-server-time = "mcp_server_time.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

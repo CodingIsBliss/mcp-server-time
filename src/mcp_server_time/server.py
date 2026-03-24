@@ -11,7 +11,7 @@ from zoneinfo import ZoneInfo, available_timezones
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("Time")
+mcp = FastMCP("Time", host="0.0.0.0", port=8000)
 
 
 # ---------------------------------------------------------------------------
@@ -135,7 +135,7 @@ def list_timezones(region: str = "") -> dict:
 
 def main():
     """Entry-point used by the console-script."""
-    mcp.run(transport="streamable-http", host="0.0.0.0", port=8000)
+    mcp.run(transport="streamable-http")
 
 
 if __name__ == "__main__":
